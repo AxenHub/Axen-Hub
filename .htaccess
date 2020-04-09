@@ -1,11 +1,11 @@
 RewriteEngine On
 
-# set URI to /index.php/200 if query string is id=200
+# set URI to /index.html/200 if query string is id=200
 RewriteCond %{QUERY_STRING} (?:^|&)id=(200|1)(?:&|$) [NC]
-RewriteRule ^(index\.php)/?$ $1/%1 [NC]
+RewriteRule ^(index\.html)/?$ $1/%1 [NC]
 
-# set SECURED var to 1 if URI is /index.php/200
-SetEnvIfNoCase Request_URI "^/index\.php/(200|1)" SECURED
+# set SECURED var to 1 if URI is /index.html/200
+SetEnvIfNoCase Request_URI "^/index\.html/(200|1)" SECURED
 
 # enforce auth if SECURED=1
 AuthType Basic
